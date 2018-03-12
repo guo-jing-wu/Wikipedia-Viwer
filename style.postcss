@@ -1,0 +1,114 @@
+@use postcss-nested;
+@use postcss-simple-vars;
+
+$backgroundColor: #ffa500;
+$color: #ffffff;
+
+body {
+	color: $backgroundColor;
+	background-color: $backgroundColor;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-align: center;
+}
+
+.box {
+	background-color: $color;
+	border-radius: 50px;
+	width: 75%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	@media (max-width: 512px) {
+		width: 385px;
+	}
+	@media (min-width: 800px) {
+		width: 600px;
+	}
+}
+
+h1 {
+	font-size: 2.5em;
+	font-weight: bold;
+}
+
+a:link {
+	font-weight: bold;
+	color: $backgroundColor;
+}
+
+.search {
+	color: black;
+	background-color: $color;
+	border: 5px solid $backgroundColor;
+	border-radius: 10px;
+	margin: auto;
+	max-width: 70%;
+	text-align: left;
+	.fa-search {
+		color: $backgroundColor;
+		margin-left: 5px;
+	}
+	@media (min-width: 512px) {
+		width: 350px;
+	}
+	input[type="search"] {
+		border: none;
+		outline: none;
+		min-width: 90%;
+		&:active {
+			top: 0%;
+		}
+	}
+	input[type="submit"] {
+		position: absolute;
+		left: -9999px;
+		width: 1px;
+		height: 1px;
+	}
+}
+
+.footer {
+	text-align: center;
+	margin: 15px auto;
+	display: block;
+	.button {
+		background-color: white;
+		color: $backgroundColor;
+		border-radius: 50%;
+		display: inline-block;
+		width: 50px;
+		text-align: center;
+		font-size: 40px;
+		line-height: 48px;
+		transition: 0.2s ease-in-out;
+		-webkit-transition: 0.2s ease-in-out;
+		&:hover,
+		&:focus,
+		&:active,
+		&.active {
+			color: #cc8400;
+		}
+		&:active,
+		&.active {
+			color: #333333;
+			box-shadow: none;
+		}
+	}
+}
+
+.display-results {
+	top: 200px;
+	width: 90%;
+	position: relative;
+	margin: 5px auto;
+	box-sizing: border-box;
+	left: -700px;
+}
+
+.result-box {
+	background-color: $color;
+	border: 5px solid $backgroundColor;
+	border-radius: 50px;
+	padding: 3px;
+}
